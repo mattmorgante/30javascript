@@ -68,13 +68,25 @@
     const sliderImages = document.querySelectorAll('.slide-in');
 
     function checkSlide(e) {
-      console.log(window.scrollY);
       sliderImages.forEach(sliderImage => {
         // pixel of the bottom area of the screen minus half the height of the image
         const slideInAt = (window.scrollY + window.innerHeight) - sliderImage.height / 2;
+        // scroll y = bottom most pixel on the screen
+        // window inner height = size of screen
+        // slider image height = height of image
+
+        // offsetTop = how far away the image is from the top of the screen
+        // need to add the offset plus the height to get the bottom most pixel of the image
+        // use this to determine if the image is already above us (and thus should be shown)
         const imageBottom = sliderImage.offsetTop + sliderImage.height;
+
+        // returns true if we are lower than half the image
         const isHalfShown = slideInAt > sliderImage.offsetTop;
+
+        // returns true if we have scrolled past the image (then the image gets removed)
         const isNotScrolledPast = window.scrollY < imageBottom;
+
+        // we are either
         if(isHalfShown && isNotScrolledPast) {
           sliderImage.classList.add('active');
         } else {
