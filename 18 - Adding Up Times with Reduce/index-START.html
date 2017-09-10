@@ -183,12 +183,11 @@
   </ul>
 <script>
   // grab all the li's from the dom
-
   // array.from turns the nodelist into an array
   const timeNodes = Array.from(document.querySelectorAll('[data-time'));
 
   const seconds = timeNodes.map(node => node.dataset.time).map(timeCode => {
-    // assign mins and secs to the timeCode, splitted by the colon
+    // assign mins and secs to the timeNode, split by the colon
     const [mins, secs] = timeCode.split(':').map(parseFloat);
     // still need to convert the strings into integers: .map(parseFloat);
     return (mins * 60) + secs;
@@ -196,8 +195,8 @@
     return total + vidSeconds;
   });
 
+  // this is the total number of seconds...but now we need to calculate the hours and minutes out of that
   console.log(seconds);
-
   let secondsLeft = seconds;
 
   // calculate the number of hours, but get the floor as we are only interested in the first digit of the answer

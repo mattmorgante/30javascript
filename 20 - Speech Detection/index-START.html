@@ -12,6 +12,38 @@
 <script>
   window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 
+  const recognition = new SpeechRecognition();
+  // as you are speaking, it is populating
+  recognition.interimResults = true;
+
+  let p = document.createElement('p');
+  const words = document.querySelector('.words');
+  words.appendChild(p);
+
+  recognition.addEventListener('result', e => {
+    // creates speech recognition events in the browser
+    const transcript = Array.from(e.results)
+            .map(result => result[0])
+            .map(result => result.transcript)
+            .join('')
+    p.textContent = transcript;
+    if(e.results[0].isFinal) {
+      p = document.createElement('p');
+      words.appendChild(p);
+    }
+//
+//    if (transcript.includes('get the weather')) {
+//      p.textContent = 'helloworld';
+//      words.appendChild(p);
+//    }
+
+    console.log(transcript);
+  });
+
+  // when it ends, run it again so it is listening again
+  recognition.addEventListener('end', recognition.start);
+  recognition.start();
+
 
 </script>
 
