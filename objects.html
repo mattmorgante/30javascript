@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Objects</title>
+</head>
+<body>
+
+
+<script>
+//    function getPerson() {
+//        let name = 'matt';
+//        let age = '26';
+//     this is the old way of getting and setting an object
+//        return {
+//            name: name,
+//            age: age,
+//        };
+
+//
+//        console.log(this);
+//        // if property name is the same as the value
+//        return {name,
+//            age,
+//            greet() {
+//                return `Hello, ${this.age}`;
+//            }
+//        };
+//    }
+//
+//    alert(getPerson().greet());
+
+
+/**
+ * OBJECT DESTRUCTURING
+ * Now you can access methods of an object as variables!!
+ * Similar to PHP's extract
+ * extract(['name' => 'Jeff']);
+ * now you have access to $name , which outputs // Jeff
+ */
+
+function getData(data) {
+    var results = data.results;
+    var count = data.count;
+
+    console.log(results, count);
+}
+
+// OR
+
+function getDataEasy(results, count) {
+    console.log(results, count);
+}
+
+
+let data = {
+    name: 'Karen',
+    age: 32,
+    results: ['foo', 'bar'],
+    count: 30
+};
+
+let { results, count } = data;
+
+console.log(results, count);
+
+
+
+
+</script>
+
+</body>
+</html>
