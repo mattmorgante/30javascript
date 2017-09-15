@@ -39,6 +39,27 @@
 
 <button></button>
 <script>
+  const divs = document.querySelectorAll('div');
+
+  function logText(e) {
+    // when you click on the inner box, it bubbles up to the other boxes as well
+    console.log(this.classList.value);
+    // click gets captured from the top down
+    // then it bubbles up!
+    // this line STOPS it before bubbling up to the next element
+//    e.stopPropagation();
+
+  }
+
+  // optional third argument called CAPTURE. then logText gets run on the bubble down INSTEAD of up (works in reverse)
+  divs.forEach(div => div.addEventListener('click', logText), {
+    // if it is set to true, then we get the event on the capture DOWN, default is set to false
+    capture: false,
+    // optional value once. unbinds itself for all clicks after the first one! (hence the name...once)
+    once: true
+    // perfect for a checkout where you can only buy something once...
+  });
+
 
 </script>
 </body>
