@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Objects</title>
+</head>
+<body>
+
+
+<script>
+    class User {
+        constructor(username, email) {
+            this.username = username;
+            this.email = email;
+        }
+
+//        static register(...args) {
+//            return new User(...args);
+//        }
+
+        changeEmail(newEmail) {
+            this.email = newEmail;
+        }
+    }
+
+//    let user = new User('matt', 'email@mail.com');
+
+    let user = User.register('matt2', 'matt@matt.com');
+    user.changeEmail('matt@matt.com');
+
+    console.dir(user);
+
+</script>
+
+</body>
+</html>
