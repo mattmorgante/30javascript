@@ -5,8 +5,26 @@
     <title>TemplateStrings</title>
 </head>
 <body>
+    <div id="name-inline">
+Hi
+    </div>
+
+
 <script>
-    let template 
+    const addMe = document.getElementById('name-inline');
+    console.log(addMe);
+
+    let name = 'Matt';
+
+    let template = `
+        <div class="Alert">
+            <p>My name is ${name}</p>
+        </div>
+    `.trim();
+
+    addMe.innerHTML = template;
+
+    console.log(template);
 
 </script>
 
