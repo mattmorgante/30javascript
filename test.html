@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sticky Nav</title>
+</head>
+<style>
+    body {
+        font-family: sans-serif;
+    }
+    nav {
+        display: flex;
+        justify-content: space-between;
+    }
+    nav ul {
+        display: flex;
+        list-style: none;
+    }
+
+    nav ul li {
+        padding: 10px;
+
+    }
+
+    .title {
+        font-size: 24px;
+    }
+
+
+    .two_buttons {
+        display: flex;
+    }
+
+    .essentials {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .button {
+        border: 1px solid grey;
+        padding: 10px;
+        margin: 5px;
+
+    }
+    
+    .photos {
+        display: flex;
+        justify-content: center;
+    }
+
+    .red { color: red;}
+    .yellow { color: darkgoldenrod;}
+    .green {color:green;}
+
+    .nutrition_notes {
+        border: 1px solid grey;
+        padding: 10px;
+    }
+</style>
+<body>
+
+<nav>
+    <h1>Sustainable Nutrition</h1>
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+    </ul>
+</nav>
+
+<hr>
+
+<div class="container">
+    <div class="essentials">
+        <h3>Granola with Soy Yogurt and Mixed Berries</h3>
+        <div class="two_buttons">
+            <div class="button">
+                $1.75
+            </div>
+            <div class="button">
+                < 5 minutes
+            </div>
+        </div>
+    </div>
+    <hr>
+
+    <div class="nutrients">
+        <div class="title">Nutritional Breakdown</div>
+        <ul class="macros">
+            <!-- if values are too low / too high, warning light -->
+            <li class="yellow">Fat: 26g</li>
+            <li class="green">Protein: 21.8g</li>
+            <li class="red">Carbs: 99.8g</li>
+            <li class="green">Fiber: 24.8g</li>
+            <li class="red">Sugar: 39.5g</li>
+            <li class="yellow">Calories: 732</li>
+        </ul>
+
+        <div class="nutrition_notes">
+            With a full serving of protein and fiber, this breakfast should keep you full until lunch. But be careful: depending on which granola you chose it could be a sugar overdose. The berries and chia seeds add vitamins and healthy fats to make it a well balanced meal.
+        </div>
+    </div>
+
+    <hr>
+    <div class="photos">
+        <img src="granola.jpeg" width="400" height="400"/>
+    </div>
+
+    <hr>
+
+    <div class="ingredients_box">
+        <div class="title">Ingredients</div>
+        <ol class="ingredients">
+            <!-- if values are too low / too high, warning light -->
+            <li>1 cup of granola</li>
+            <li>3/4 cup of soy yogurt</li>
+            <li>3/4 cup of frozen mixed berries</li>
+            <li>2 tbsp of chia seeds</li>
+        </ol>
+    </div>
+
+    <hr>
+    <div class="notes">
+        <div class="title">Notes</div>
+        <ul>
+            <li>Granola can be high in sugar, so choose your brand wisely. For more information, check out: bit.ly/ffeerel</li>
+            <li>Depending on what's available in your neighborhood, Soy yogurt can be replaced with soy milk, almond milk, coconut milk, or coconut yogurt</li>
+            <li>Mix in fresh peaches or other seasonal fruit when available</li>
+        </ul>
+    </div>
+
+    <hr>
+    <div class="essentials">
+        <div class="two_buttons">
+            <div class="button">
+                I like this recipe!
+            </div>
+            <div class="button">
+                Shareable Link
+            </div>
+        </div>
+    </div>
+
+
+</div>
+<hr>
+
+
+
+
+<script>
+    data = '[{"id": 0, "title" : "Granola"},{"id": 1, "title" : "Oatmeal"}]';
+
+
+
+//    var mydata = JSON.parse(data);
+//    alert(mydata[0].title);
+//    alert(mydata[0].age);
+//    alert(mydata[1].name);
+//    alert(mydata[1].age);
+
+</script>
+
+</body>
+
+
+</html>
